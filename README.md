@@ -24,3 +24,11 @@ Learn SQL through hands-on experience with real-world data.
 Develop and test complex queries for task and project management systems.
 Build web applications or dashboards using the dataset.
 
+Project structure:
+Database Setup Description
+    1. DataBase Creation
+   create database db_project;
+   use db_project;
+
+
+
