@@ -36,4 +36,9 @@ To set up the **Task Manager System** on your local machine, follow these steps:
    Clone the repository to your local machine using the following command:
    ```bash
    git clone https://va-nshika/task_manager_project1.git
+2. Database Creation
+   ```bash
+   create database db_project;
+    use db_project;
+
 
