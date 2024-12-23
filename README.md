@@ -29,4 +29,11 @@ The system is built to simulate a typical task management system used in a workp
 
 ## Project Structure
 The project structure consists of SQL scripts and data files to set up and interact with the Task Manager System:
+### Database Setup
+To set up the **Task Manager System** on your local machine, follow these steps:
+
+1. **Clone the repository**: 
+   Clone the repository to your local machine using the following command:
+   ```bash
+   git clone https://github.com/yourusername/task-manager-system.git
 
