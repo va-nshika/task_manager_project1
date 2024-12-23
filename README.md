@@ -40,5 +40,19 @@ To set up the **Task Manager System** on your local machine, follow these steps:
    ```bash
    create database db_project;
     use db_project;
+2. Database Creation
+   ```bash
+   create database db_project;
+    use db_project;
+3. table creation
+   a. **User** table creation
+    ```bash
+    CREATE TABLE Users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50),
+    email VARCHAR(100),
+    role VARCHAR(50)
+    );
+  
 
 
