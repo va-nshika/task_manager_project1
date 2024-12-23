@@ -35,5 +35,5 @@ To set up the **Task Manager System** on your local machine, follow these steps:
 1. **Clone the repository**: 
    Clone the repository to your local machine using the following command:
    ```bash
-   git clone https://github.com/yourusername/task-manager-system.git
+   git clone https://va-nshika/task_manager_project1.git
 
