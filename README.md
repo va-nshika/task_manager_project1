@@ -54,7 +54,7 @@ To set up the **Task Manager System** on your local machine, follow these steps:
     );
 
   **project** table:
-       ```bash
+    ```bash
        
             CREATE TABLE Projects (
                 project_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -63,14 +63,14 @@ To set up the **Task Manager System** on your local machine, follow these steps:
                 end_date DATE
             );
    **Status** table:
-            ```bash
+    ```bash
     
             CREATE TABLE Statuses (
         status_id INT AUTO_INCREMENT PRIMARY KEY,
         status_name VARCHAR(50)
         );
   **Task** table:
-            ```bash
+    ```bash
   
                CREATE TABLE Tasks (
       task_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -88,27 +88,27 @@ To set up the **Task Manager System** on your local machine, follow these steps:
                
 
   #1. List all projects that are currently active 
-         ```bash
+      ```bash
            
             SELECT * 
             FROM Projects 
             WHERE CURDATE() BETWEEN start_date AND end_date;
 
 #2. Find all tasks that are assigned to a specific user, e.g., user_id = 10.
-         ```bash
+    ```bash
 
           SELECT * 
          FROM Tasks 
         WHERE assigned_to = 10;
 #3 . Get the count of all tasks by priority level
-           ```bash
+    ```bash
 
 
       SELECT priority, COUNT(*) AS task_count 
       FROM Tasks 
       GROUP BY priority;
 #4. Get the count of all tasks by priority level
-       ```bash
+    ```bash
 
        
     SELECT priority, COUNT(*) AS task_count 
