@@ -53,36 +53,33 @@ To set up the **Task Manager System** on your local machine, follow these steps:
     role VARCHAR(50)
     );
 
-  **project** table:
-    ```bash
-                   
-      CREATE TABLE Projects (
-      project_id INT AUTO_INCREMENT PRIMARY KEY,
-       project_name VARCHAR(100),
-       start_date DATE,
-      end_date DATE);
-      
-  **Status** table:
-  ```bash
-   CREATE TABLE Statuses (
+ 
+### `sql/create_tables.sql` Content:
+```sql
+CREATE TABLE Projects (
+  project_id INT AUTO_INCREMENT PRIMARY KEY,
+  project_name VARCHAR(100),
+  start_date DATE,
+  end_date DATE
+);
+
+CREATE TABLE Statuses (
   status_id INT AUTO_INCREMENT PRIMARY KEY,
-  status_name VARCHAR(50));
+  status_name VARCHAR(50)
+);
 
-
-  **Task** table:
-    ```bash
-  
-               CREATE TABLE Tasks (
-      task_id INT AUTO_INCREMENT PRIMARY KEY,
-      project_id INT,
-      assigned_to INT,
-      task_description TEXT,
-      status_id INT,
-      priority VARCHAR(50),
-      due_date DATE,
-      FOREIGN KEY (project_id) REFERENCES Projects(project_id),
-      FOREIGN KEY (assigned_to) REFERENCES Users(user_id),
-      FOREIGN KEY (status_id) REFERENCES Statuses(status_id));
+CREATE TABLE Tasks (
+  task_id INT AUTO_INCREMENT PRIMARY KEY,
+  project_id INT,
+  assigned_to INT,
+  task_description TEXT,
+  status_id INT,
+  priority VARCHAR(50),
+  due_date DATE,
+  FOREIGN KEY (project_id) REFERENCES Projects(project_id),
+  FOREIGN KEY (assigned_to) REFERENCES Users(user_id),
+  FOREIGN KEY (status_id) REFERENCES Statuses(status_id)
+);
 
   
                
