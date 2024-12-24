@@ -42,18 +42,6 @@ To set up the **Task Manager System** on your local machine, follow these steps:
    create database db_project;
     use db_project;
 3. table creation
-
-
-    **User** table:
-   ```bash
-    CREATE TABLE Users (
-    user_id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50),
-    email VARCHAR(100),
-    role VARCHAR(50)
-    );
-
- 
 ### `sql/create_tables.sql` Content:
 ```sql
 CREATE TABLE Projects (
@@ -81,36 +69,14 @@ CREATE TABLE Tasks (
   FOREIGN KEY (status_id) REFERENCES Statuses(status_id)
 );
 
-  
-               
-
-  #1. List all projects that are currently active 
-      ```bash
-           
-            SELECT * 
-            FROM Projects 
-            WHERE CURDATE() BETWEEN start_date AND end_date;
-
-#2. Find all tasks that are assigned to a specific user, e.g., user_id = 10.
-    ```bash
-
-          SELECT * 
-         FROM Tasks 
-        WHERE assigned_to = 10;
-#3 . Get the count of all tasks by priority level
-    ```bash
+CREATE TABLE Users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50),
+    email VARCHAR(100),
+    role VARCHAR(50)
+    );
 
 
-      SELECT priority, COUNT(*) AS task_count 
-      FROM Tasks 
-      GROUP BY priority;
-#4. Get the count of all tasks by priority level
-    ```bash
-
-       
-    SELECT priority, COUNT(*) AS task_count 
-    FROM Tasks 
-    GROUP BY priority;
 
 
 
