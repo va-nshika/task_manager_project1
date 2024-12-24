@@ -45,7 +45,7 @@ To set up the **Task Manager System** on your local machine, follow these steps:
 
 
     **User** table:
-    ```bash
+   ```bash
     CREATE TABLE Users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50),
@@ -55,15 +55,15 @@ To set up the **Task Manager System** on your local machine, follow these steps:
 
   **project** table:
     ```bash
-       
-            CREATE TABLE Projects (
-                project_id INT AUTO_INCREMENT PRIMARY KEY,
-                project_name VARCHAR(100),
-                start_date DATE,
-                end_date DATE
-            );
-   **Status** table:
-    ```bash
+                   
+                   CREATE TABLE Projects (
+                            project_id INT AUTO_INCREMENT PRIMARY KEY,
+                            project_name VARCHAR(100),
+                            start_date DATE,
+                            end_date DATE
+                        );
+  **Status** table:
+  ```bash
     
             CREATE TABLE Statuses (
         status_id INT AUTO_INCREMENT PRIMARY KEY,
