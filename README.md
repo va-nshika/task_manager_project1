@@ -36,10 +36,7 @@ To set up the **Task Manager System** on your local machine, follow these steps:
    Clone the repository to your local machine using the following command:
    ```bash
    git clone https://va-nshika/task_manager_project1.git
-2. Database Creation
-   ```bash
-   create database db_project;
-    use db_project;
+
 2. Database Creation
    ```bash
    create database db_project;
@@ -57,20 +54,25 @@ To set up the **Task Manager System** on your local machine, follow these steps:
     );
 
   **project** table:
-  ```bash
-        CREATE TABLE Projects (
-            project_id INT AUTO_INCREMENT PRIMARY KEY,
-            project_name VARCHAR(100),
-            start_date DATE,
-            end_date DATE
+       ```bash
+       
+            CREATE TABLE Projects (
+                project_id INT AUTO_INCREMENT PRIMARY KEY,
+                project_name VARCHAR(100),
+                start_date DATE,
+                end_date DATE
+            );
+   **Status** table:
+            ```bash
+    
+            CREATE TABLE Statuses (
+        status_id INT AUTO_INCREMENT PRIMARY KEY,
+        status_name VARCHAR(50)
         );
-
-
-  CREATE TABLE Statuses (
-      status_id INT AUTO_INCREMENT PRIMARY KEY,
-      status_name VARCHAR(50)
-  );
-  CREATE TABLE Tasks (
+  **Task** table:
+            ```bash
+  
+               CREATE TABLE Tasks (
       task_id INT AUTO_INCREMENT PRIMARY KEY,
       project_id INT,
       assigned_to INT,
@@ -80,11 +82,41 @@ To set up the **Task Manager System** on your local machine, follow these steps:
       due_date DATE,
       FOREIGN KEY (project_id) REFERENCES Projects(project_id),
       FOREIGN KEY (assigned_to) REFERENCES Users(user_id),
-      FOREIGN KEY (status_id) REFERENCES Statuses(status_id)
-  );
-
-
+      FOREIGN KEY (status_id) REFERENCES Statuses(status_id));
 
   
+               
+
+  #1. List all projects that are currently active 
+         ```bash
+           
+            SELECT * 
+            FROM Projects 
+            WHERE CURDATE() BETWEEN start_date AND end_date;
+
+#2. Find all tasks that are assigned to a specific user, e.g., user_id = 10.
+         ```bash
+
+          SELECT * 
+         FROM Tasks 
+        WHERE assigned_to = 10;
+#3 . Get the count of all tasks by priority level
+           ```bash
+
+
+      SELECT priority, COUNT(*) AS task_count 
+      FROM Tasks 
+      GROUP BY priority;
+#4. Get the count of all tasks by priority level
+       ```bash
+
+       
+    SELECT priority, COUNT(*) AS task_count 
+    FROM Tasks 
+    GROUP BY priority;
+
+
+
+
 
 
